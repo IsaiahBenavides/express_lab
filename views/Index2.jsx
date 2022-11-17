@@ -6,6 +6,9 @@ class Index2 extends React.Component {
     return (
       <div>
         <h1>Vegetables Index Page</h1>
+        <nav>
+          <a href="/vegetables/new">New Veggie</a>
+        </nav>
         <ul>
           {
             vegetables.map((vegetable, i) => {

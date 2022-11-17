@@ -48,6 +48,21 @@ app.get("/vegetables", (req, res) => {
   res.render("Index2", { vegetables: vegetables })
 })
 
+app.get(`/vegetables/new`, (req, res) =>{
+  res.render(`New2`)
+})
+
+app.post(`/vegetables`, (req ,res) =>{
+  if(req.body.readyToEat === `on`){
+    req.body.readyToEat = true
+  }else{
+    req.body.readyToEat = false
+  }
+  vegetables.push(req.body)
+  console.log(vegetables)
+  res.redirect(`/vegetables`)
+})
+
 // Show route for Vegetables
 
 app.get("/vegetables/:indexOfVegetables", (req, res) => {
