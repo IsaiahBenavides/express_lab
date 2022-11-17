@@ -10,8 +10,30 @@ app.set("view engine", "jsx")
 app.engine("jsx", reactViews.createEngine())
 
 
+app.use((req, res, next) =>{
+  console.log(`I ran for all routes`)
+  next()
+})
+
+app.use(express.urlencoded({extended:false}));
+
 app.get("/fruits", (req, res) => {
   res.render("Index", { fruits: fruits })
+})
+
+app.get(`/fruits/new`, (req, res) =>{
+  res.render(`New`)
+})
+
+app.post(`/fruits`, (req, res) =>{
+  if(req.body.readyToEat === `on`){
+    req.body.readyToEat = true
+  }else {
+    req.body.readyToEat = false
+  }
+  fruits.push(req.body)
+  console.log(fruits)
+  res.redirect(`/fruits`)
 })
 
 app.get("/fruits/:indexOfFruit", (req, res) => {
