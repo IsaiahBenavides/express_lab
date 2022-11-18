@@ -7,7 +7,7 @@ class Index2 extends React.Component {
       <div>
         <h1>Vegetables Index Page</h1>
         <nav>
-          <a href="/vegetables/new">New Veggie</a>
+          <a href="/vegetables/new">Create Veggies</a>
         </nav>
         <ul>
           {
@@ -15,7 +15,7 @@ class Index2 extends React.Component {
               return (
                 <li key = {i}> 
                   The{' '}
-                  <a href={`/vegetables/${i}`}>{vegetable.name}</a>
+                  <a href={`/vegetables/${vegetable._id}`}>{vegetable.name}</a>
                   {" "}
                   is {vegetable.color} <br />
                   {
