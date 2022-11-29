@@ -29,6 +29,11 @@ app.use(express.static(`public`))
 app.use(express.urlencoded({extended:false}));
 app.use(methodOverride(`_method`))
 
+// LANDING PAGE
+app.get(`/`, (req,res)=>{
+  res.render(`Landing`)
+})
+
 // ROUTES
 app.use(`/fruits`, fruitsController)
 app.use(`/vegetables`, vegetablesController)

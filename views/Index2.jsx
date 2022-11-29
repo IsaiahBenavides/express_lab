@@ -5,8 +5,7 @@ class Index2 extends React.Component {
   render() {
     const  { vegetables } = this.props
     return (
-      <DefaultLayout>
-        <h1>Vegetables Index Page</h1>
+      <DefaultLayout title="Vegetables Index Page">
         <nav>
           <a href="/vegetables/new">Create Veggies</a>
         </nav>
@@ -33,7 +32,9 @@ class Index2 extends React.Component {
                 </li>
               )
             })
-          }
+          } 
+          <br />
+          <a href="/">Back to Landing Page</a>
         </ul>
       </DefaultLayout>
     )

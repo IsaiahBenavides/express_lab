@@ -33,6 +33,8 @@ class Index extends React.Component {
               )
             })
           }
+          <br />
+          <a href="/">Back to Landing Page</a>
         </ul>
       </DefaultLayout>
     )
