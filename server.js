@@ -25,10 +25,6 @@ app.set("view engine", "jsx")
 app.engine("jsx", reactViews.createEngine())
 
 // MIDDLEWARE
-app.use((req, res, next) =>{
-  console.log(`I ran for all routes`)
-  next()
-})
 app.use(express.urlencoded({extended:false}));
 app.use(methodOverride(`_method`))
 

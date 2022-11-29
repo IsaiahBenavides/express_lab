@@ -1,10 +1,11 @@
 const React = require("react")
+const DefaultLayout = require("./layout/Default")
 
 class Index2 extends React.Component {
   render() {
     const  { vegetables } = this.props
     return (
-      <div>
+      <DefaultLayout>
         <h1>Vegetables Index Page</h1>
         <nav>
           <a href="/vegetables/new">Create Veggies</a>
@@ -24,12 +25,17 @@ class Index2 extends React.Component {
                     : "It is not ready to eat"
                   }
                   <br />
+                  <a href={`/vegetables/${vegetable._id}/edit`}>Edit This vegetable</a>
+                  <form action={`/vegetables/${vegetable._id}?_method=DELETE`}
+                  method="POST">
+                    <input type="submit" value="DELETE" />
+                  </form>
                 </li>
               )
             })
           }
         </ul>
-      </div>
+      </DefaultLayout>
     )
   } 
 }

@@ -1,18 +1,16 @@
 const React = require("react");
+const DefaultLayout = require("./layout/Default")
 
 class Show2 extends React.Component {
   render() {
     const {name, color, readyToEat} = this.props.vegetable
     return (
-      <div>
-        <h1>Show Page</h1>
-
-        <div>
+      <DefaultLayout title={`${name} Show Page`}>
+        <a href="/vegetables">Back</a>
           <p>The {name} is {color}.</p>
           {readyToEat? "It is ready to eat!" : "It is not ready to eat... dont touch that"}
-        </div> 
-      </div>
-    )
+      </DefaultLayout>
+    ) 
   }
 }
 // We can write javascript code within the curly brackets

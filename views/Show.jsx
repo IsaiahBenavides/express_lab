@@ -6,6 +6,7 @@ class Show extends React.Component {
     const {name, color, readyToEat} = this.props.fruit
     return (
         <DefaultLayout title={`${name} Show Page`}>
+          <a href="/fruits">Back</a>
           <p>The {name} is {color}.</p>
           {readyToEat? "It is ready to eat!" : "It is not ready to eat... dont touch that"}
         </DefaultLayout> 

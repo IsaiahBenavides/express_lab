@@ -78,8 +78,6 @@ router.get("/:id/edit", (req, res) => {
   })
 })
 
-
-
 //SHOW
 router.get("/:id", (req, res) => {
     // findById 1st arg: the id of the fruit we want to find 

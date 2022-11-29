@@ -5,6 +5,7 @@ class Edit extends React.Component {
     render(){
         return(
             <DefaultLayout title="Edit Page">
+                <a href="/fruits">Back</a>
                 <form action={`/fruits/${this.props.fruit._id}?_method=PUT`} method="POST">
                     Name: <input type="text" name="name" defaultValue={this.props.fruit.name} /><br />
                     Color: <input type="text" name="color" defaultValue={this.props.fruit.color} /><br />
